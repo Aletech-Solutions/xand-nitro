@@ -1,4 +1,2 @@
 .idea
 **/*.pid
-emulator/logging
-nitro/nitro-assets/*
