@@ -18,7 +18,7 @@ services:
       - volume-arcturus-target:/app/arcturus/target
       - volume-arcturus-maven-repo:/root/.m2
     ports:
-      - 3000:3000
+      - 3004:3004
       - 3001:3001
       - 2096:2096
     depends_on:
@@ -37,7 +37,7 @@ services:
       - volume-nitro-react-node-modules:/app/nitro-react/node_modules
     ports:
       - 1080:5154
-      - 8080:8080
+      - 8083:8083
       - 8081:8081
     networks:
       nitro:
