@@ -9,7 +9,7 @@ Nitro docker is a quick-to-setup docker dev environment. It can be run on Window
 - `just install`
 - `just start-all`
 - Wait 5/10 minutes (it's important)
-- Once nitro accessible on [http://192.168.0.12:1080?sso=123](http://192.168.0.12:1080?sso=123)
+- Once nitro accessible on [http://192.168.0.9:1080?sso=123](http://192.168.0.9:1080?sso=123)
 - You can extract all assets easily with the command `just extract-nitro-assets`
 
 ‼️ If you have have the 20% error, look at the console, maybe it miss the "ExternalText". Just extract assets: previous command ⬆️
@@ -48,14 +48,14 @@ The first database come from mysql/dumps, it's the base Arcturus database for 3.
 ### Changing Server IP Address
 If you're deploying to an external server (not localhost), you need to update the IP address in the following files:
 
-**Files that need your server's IP address (e.g., `192.168.0.12` or `yourdomain.com`):**
+**Files that need your server's IP address (e.g., `192.168.0.9` or `yourdomain.com`):**
 1. `nitro/configuration/nitro-react/public/renderer-config.json`
    - Update: `socket.url`, `asset.url`, `image.library.url`, `hof.furni.url`
-   - Example: `"socket.url": "ws://192.168.0.12:2096"`
+   - Example: `"socket.url": "ws://192.168.0.9:2096"`
    
 2. `nitro/configuration/nitro-converter/configuration.json`
    - Update all URLs containing the IP address
-   - Example: `"flash.client.url": "http://192.168.0.12:8081/gordon/PRODUCTION/"`
+   - Example: `"flash.client.url": "http://192.168.0.9:8081/gordon/PRODUCTION/"`
 
 **Files that should keep `0.0.0.0` (server binding):**
 - `emulator/config.ini` - Keep `game.host=0.0.0.0` and `rcon.host=0.0.0.0`
